@@ -92,7 +92,7 @@
         <!-- クイズ -->
         <section id="quiz">
             <h2>クイズ</h2>
-            <p>今日のクイズ: 四字熟語の意味は何ですか？</p>
+            <p>難読漢字クイズ:蝋燭の読み方は何でしょう？</p>
             <input type="text" id="answer" placeholder="答えを入力">
             <button onclick="checkAnswer()">提出</button>
             <p id="result"></p>
@@ -103,8 +103,7 @@
         // クイズの回答をチェックする関数
         function checkAnswer() {
             const userAnswer = document.getElementById("answer").value.toLowerCase();
-            const correctAnswer = "四字熟語の意味"; // 正しい回答を設定
-
+            const correctAnswer = "ろうそく"; 
             if (userAnswer === correctAnswer) {
                 document.getElementById("result").textContent = "正解です！";
             } else {
