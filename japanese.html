@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国語学習サイト</title>
+    <style>
+        /* スタイルの設定 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        #quiz {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>国語学習サイト</h1>
+    </header>
+
+    <main>
+        <!-- 学習コンテンツ -->
+        <section id="lessons">
+            <h2>学習コンテンツ</h2>
+            <ul>
+                <li><a href="lesson1.html">国語の基礎</a></li>
+                <li><a href="lesson2.html">漢字の学習</a></li>
+                <li><a href="lesson3.html">作文の練習</a></li>
+            </ul>
+        </section>
+
+        <!-- クイズ -->
+        <section id="quiz">
+            <h2>クイズ</h2>
+            <p>今日のクイズ: 四字熟語の意味は何ですか？</p>
+            <input type="text" id="answer" placeholder="答えを入力">
+            <button onclick="checkAnswer()">提出</button>
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <script>
+        // クイズの回答をチェックする関数
+        function checkAnswer() {
+            const userAnswer = document.getElementById("answer").value.toLowerCase();
+            const correctAnswer = "四字熟語の意味"; // 正しい回答を設定
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById("result").textContent = "正解です！";
+            } else {
+                document.getElementById("result").textContent = "不正解です。正しい答えは「四字熟語の意味」です。";
+            }
+        }
+    </script>
+</body>
+</html>
