@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国語学習サイト - ログイン</title>
+    <style>
+        /* スタイルの設定 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        /* ログインフォームのスタイル */
+        #login-form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #login-form input[type="text"],
+        #login-form input[type="password"],
+        #login-form button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        #login-form button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>国語学習サイト</h1>
+    </header>
+
+    <main>
+        <!-- ログインフォーム -->
+        <section id="login-form">
+            <h2>ログイン</h2>
+            <form id="login">
+                <input type="text" id="username" placeholder="ユーザー名" required><br>
+                <input type="password" id="password" placeholder="パスワード" required><br>
+                <button type="submit">ログイン</button>
+            </form>
+            <p id="login-status"></p>
+        </section>
+    </main>
+
+    <script>
+        // ログインフォームのサブミットイベントハンドラ
+        document.getElementById("login").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // ここでユーザーの認証を行うロジックを実装
+            // ダミーの認証を行う例:
+            if (username === "user" && password === "password") {
+                document.getElementById("login-status").textContent = "ログイン成功！";
+
+                // ログイン成功時の処理を追加
+                // 例: 別ページにリダイレクト
+                setTimeout(function () {
+                    window.location.href = "別のページのURL"; // リダイレクト先のURLを設定
+                }, 2000); // 2秒後にリダイレクト
+            } else {
+                document.getElementById("login-status").textContent = "ユーザー名またはパスワードが正しくありません。";
+            }
+        });
+    </script>
+</body>
+</html>
