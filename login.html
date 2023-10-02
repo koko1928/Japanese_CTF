@@ -107,10 +107,10 @@
                 document.getElementById("login-status").textContent = "ログイン成功！";
 
                 // ログイン成功時の処理を追加
-                // 例: 別ページにリダイレクト
+                // 例: 別のファイルに移動
                 setTimeout(function () {
-                    window.location.href = "別のページのURL"; // リダイレクト先のURLを設定
-                }, 2000); // 2秒後にリダイレクト
+                    window.location.href = "japanese.html"; // 移動先のファイル名を設定
+                }, 1000); // 1秒後に移動
             } else {
                 document.getElementById("login-status").textContent = "ユーザー名またはパスワードが正しくありません。";
             }
