@@ -59,13 +59,11 @@
             background-color: #0056b3;
         }
 
-        /* 追加スタイル：リンクをスタイル */
         a {
             color: #007BFF;
             text-decoration: none;
         }
 
-        /* 追加スタイル：エラーメッセージのスタイル */
         .error-message {
             color: #ff0000;
             margin-top: 10px;
@@ -118,8 +116,17 @@
                     window.location.href = user.redirectURL;
                 } else {
                     loginError.textContent = "ユーザー名またはパスワードが正しくありません。";
+                    setTimeout(() => {
+                        loginError.textContent = ''; 
+                    }, 5000); // 5秒後にクリア
                 }
             });
+
+            // ページが直接アクセスされた場合にリファラーをチェックし、特定のドメインでない場合にリダイレクト
+            const referrer = document.referrer;
+            if (referrer === '' || !referrer.includes('yudo.html')) {
+                window.location.href = 'access_denied.html'; 
+            }
         });
     </script>
 </body>
