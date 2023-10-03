@@ -44,7 +44,7 @@
 <body>
     <div class="button-container">
         <p class="premium-info">この記事はプレミアムユーザー専用です。</p>
-        <button class="premium-button" onclick="premiumLogin()">プレミアムユーザーのログインはこちら</button>
+        <button class="premium-button" onclick="premiumLogin()">Click to log in with your premium account</button>
         <button class="premium-button" onclick="cancel()">結構です</button>
     </div>
 
@@ -54,7 +54,6 @@
         }
         
         function cancel() {
-            // 一定の確率で遷移
             const randomValue = Math.random();
             if (randomValue < 0.5) {
                 window.location.href = "japanese.html"; 
