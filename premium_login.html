@@ -59,10 +59,13 @@
             background-color: #0056b3;
         }
 
+        /* 追加スタイル：リンクをスタイル */
         a {
             color: #007BFF;
             text-decoration: none;
         }
+
+        /* 追加スタイル：エラーメッセージのスタイル */
         .error-message {
             color: #ff0000;
             margin-top: 10px;
@@ -77,15 +80,26 @@
             <input type="text" id="username" name="username" required>
             <label for="password">パスワード:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">ログイン</button>
+            <button type="submit" id="login-button">ログイン</button>
             <p class="error-message" id="login-error"></p>
         </form>
     </div>
     <script>
         const users = [
-            { username: "premiumuser", password: "password123", redirectURL: "premium.html" },
-            { username: "admin", password: "sudo", redirectURL: "ad.html" }
+            { username: "premiumuser", password: "password123", redirectURL: "テスト1.html" },
+            { username: "admin", password: "sudo", redirectURL: "テスト2.html" }
         ];
+
+        const usernameInput = document.getElementById('username');
+        const loginButton = document.getElementById('login-button');
+
+        usernameInput.addEventListener('input', function() {
+            if (usernameInput.value === "admin") {
+                loginButton.disabled = true;
+            } else {
+                loginButton.disabled = false;
+            }
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
             const loginForm = document.getElementById('login-form');
