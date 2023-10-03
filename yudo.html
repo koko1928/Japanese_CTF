@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレミアムコンテンツ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .premium-info {
+            margin-bottom: 20px;
+        }
+
+        .premium-button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-top: 12px;
+        }
+
+        .premium-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <p class="premium-info">この記事はプレミアムユーザー専用です。</p>
+        <button class="premium-button" onclick="premiumLogin()">プレミアムユーザーのログインはこちら</button>
+        <button class="premium-button" onclick="cancel()">結構です</button>
+    </div>
+
+    <script>
+        function premiumLogin() {
+            window.location.href = "premium_login.html"; 
+        }
+        
+        function cancel() {
+            // 一定の確率で遷移
+            const randomValue = Math.random();
+            if (randomValue < 0.5) {
+                window.location.href = "japanese.html"; 
+            } else {
+                window.location.href = "https://quill.xxxxxxxx.jp"; 
+            }
+        }
+    </script>
+</body>
+</html>
+
