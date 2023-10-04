@@ -118,11 +118,9 @@
                     loginError.textContent = "ユーザー名またはパスワードが正しくありません。";
                     setTimeout(() => {
                         loginError.textContent = ''; 
-                    }, 5000); // 5秒後にクリア
+                    }, 5000); 
                 }
             });
-
-            // ページが直接アクセスされた場合にリファラーをチェックし、特定のドメインでない場合にリダイレクト
             const referrer = document.referrer;
             if (referrer === '' || !referrer.includes('yudo.html')) {
                 window.location.href = 'access_denied.html'; 
