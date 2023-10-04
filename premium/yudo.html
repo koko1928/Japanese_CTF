@@ -45,23 +45,22 @@
     <div class="button-container">
         <p class="premium-info">この記事はプレミアムユーザー専用です。</p>
         <button class="premium-button" onclick="premiumLogin()">Click to log in with your premium account</button>
-        <button class="premium-button" onclick="cancel()">結構です</button>
+        <button class="premium-button" onclick="cancel()">No, Thanks</button>
     </div>
 
     <script>
         function premiumLogin() {
-            window.location.href = "premium_login.html"; 
+            window.location.href = "../kimitsu/logins/premium_login.html";
         }
         
         function cancel() {
             const randomValue = Math.random();
             if (randomValue < 0.5) {
-                window.location.href = "japanese.html"; 
+                window.location.href = "japanese.html";
             } else {
-                window.location.href = "https://quill.xxxxxxxx.jp"; 
+                window.location.href = "https://quill.xxxxxxxx.jp";
             }
         }
     </script>
 </body>
 </html>
-
