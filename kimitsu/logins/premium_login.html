@@ -115,7 +115,7 @@
                     alert("ログイン成功！");
                     window.location.href = user.redirectURL;
                 } else {
-                    loginError.textContent = "ユーザー名またはパスワードが正しくありません。";
+                    loginError.textContent = "ユーザー名またはパスワードが間違っています。";
                     setTimeout(() => {
                         loginError.textContent = ''; 
                     }, 5000); 
