@@ -82,50 +82,6 @@
             <p class="error-message" id="login-error"></p>
         </form>
     </div>
-    <script>
-        const users = [
-            { username: "premiumuser", password: "password123", redirectURL: "../../premium/premium.html" },
-            { username: "admin", password: "sudo", redirectURL: "YWRtaW5pc3RyYXRvcg==.html" }
-        ];
-
-        const usernameInput = document.getElementById('username');
-        const loginButton = document.getElementById('login-button');
-
-        usernameInput.addEventListener('input', function() {
-            if (usernameInput.value === "admin") {
-                loginButton.disabled = true;
-            } else {
-                loginButton.disabled = false;
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginForm = document.getElementById('login-form');
-            const loginError = document.getElementById('login-error');
-
-            loginForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
-
-                const user = users.find(user => user.username === username && user.password === password);
-
-                if (user) {
-                    alert("ログイン成功！");
-                    window.location.href = user.redirectURL;
-                } else {
-                    loginError.textContent = "ユーザー名またはパスワードが間違っています。";
-                    setTimeout(() => {
-                        loginError.textContent = ''; 
-                    }, 5000); 
-                }
-            });
-            const referrer = document.referrer;
-            if (referrer === '') {
-                window.location.href = '../../access_denied.html'; 
-            }
-        });
-    </script>
+    <script src="premium_login.js"></script>
 </body>
 </html>
