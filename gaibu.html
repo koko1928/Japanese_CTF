@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページ遷移</title>
+</head>
+<body>
+    <h1>ボタンを押して任意のページに行く</h1>
+
+    <button onclick="goToPage('page1.html')">ページ1に行く</button>
+    <button onclick="goToPage('page2.html')">ページ2に行く</button>
+    <button onclick="goToPage('page3.html')">ページ3に行く</button>
+
+    <script>
+        function goToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
+</body>
+</html>
