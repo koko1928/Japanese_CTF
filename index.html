@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国語学習サイト</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
             background-color: #f2f2f2;
         }
 
         header {
-            background-color: #eaf2f8;
+            background-color: #007BFF;
+            color: white;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -18,29 +22,34 @@
         }
 
         h1 {
-            color: #333;
-            font-size: 28px;
             margin: 0;
         }
 
-        button {
-            padding: 10px 20px;
+        .login-button {
             background-color: #333;
-            color: #fff;
+            color: white;
             border: none;
+            padding: 10px 20px;
             cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #444;
         }
 
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            background-color: #f8f8f8;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #007BFF;
         }
 
         nav ul li {
-            float: left;
+            margin: 0;
+            padding: 0;
         }
 
         nav ul li a {
@@ -50,26 +59,26 @@
             padding: 14px 16px;
             text-decoration: none;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: #ddd;
+            background-color: #007BFF;
+            color: white;
         }
 
         main {
             padding: 20px;
             background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         section {
-            display: none;
             margin-bottom: 20px;
         }
 
         h2 {
-            color: #333;
-            font-size: 24px;
-            margin-top: 0;
+            color: #007BFF;
         }
 
         p {
@@ -83,21 +92,17 @@
         }
 
         footer {
-            background-color: #eaf2f8;
+            background-color: #007BFF;
             padding: 20px;
             text-align: center;
-        }
-
-        footer p {
-            color: #555;
-            font-size: 14px;
+            color: white;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>国語学習サイト</h1>
-        <button onclick="redirectToLogin()">ログイン</button>
+        <button class="login-button" onclick="redirectToLogin()">ログイン</button>
     </header>
     <nav>
         <ul>
@@ -171,6 +176,9 @@
             </ul>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2023 koko1928. All rights reserved.</p>
+    </footer>
     <script>
         function showSection(sectionId) {
             let sections = document.getElementsByTagName("section");
@@ -187,7 +195,4 @@
         }
     </script>
 </body>
-    <footer>
-        <p>&copy; 2023 koko1928. All rights reserved.</p>
-    </footer>
 </html>
